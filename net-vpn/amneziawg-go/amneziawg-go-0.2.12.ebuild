@@ -8,7 +8,7 @@ inherit go-module
 DESCRIPTION="AmneziaWG VPN protocol"
 HOMEPAGE="https://github.com/amnezia-vpn/amneziawg-go"
 SRC_URI="https://github.com/amnezia-vpn/amneziawg-go/archive/v${PV}.tar.gz -> ${P}.tar.gz"
-SRC_URI+=" https://github.com/RomikB/gentoo-repository-deps/raw/refs/heads/main/${P}-vendor.tar.xz"
+SRC_URI+=" https://github.com/RomikB/gentoo-repository-deps/raw/main/${P}-vendor.tar.xz"
 
 LICENSE="MIT"
 SLOT="0"
