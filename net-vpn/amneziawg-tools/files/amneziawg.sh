@@ -8,6 +8,8 @@ amneziawg_depend()
 
 amneziawg_pre_start()
 {
+	[ "${IFACE#awg}" != "$IFACE" ] || return 0
+
 	ebegin "Configuring amneziawg interface $IFACE"
 	awg-quick up $IFACE 2>/dev/null
 	e=$?
