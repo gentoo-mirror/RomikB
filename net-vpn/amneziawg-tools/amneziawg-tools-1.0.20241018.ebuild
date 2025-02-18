@@ -28,4 +28,9 @@ src_install() {
 		SYSTEMDUNITDIR="$(systemd_get_systemunitdir)" \
 		PREFIX="${EPREFIX}/usr" \
 		-C src install
+	local NETIFRCNETDIR="${EPREFIX}/lib/netifrc/net"
+	insinto "${NETIFRCNETDIR}"
+	doins "${FILESDIR}/amneziawg.sh"
+	fowners root:root "${NETIFRCNETDIR}/amneziawg.sh"
+	fperms 644 "${NETIFRCNETDIR}/amneziawg.sh"
 }
