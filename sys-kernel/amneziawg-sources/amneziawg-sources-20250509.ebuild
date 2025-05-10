@@ -3,7 +3,7 @@
 
 EAPI=8
 
-DESCRIPTION="Gentoo Kernel sources for AmneziaWG kernel module"
+DESCRIPTION="Gentoo Kernel sources for AmneziaWG Linux kernel module"
 HOMEPAGE="https://github.com/amnezia-vpn/amneziawg-linux-kernel-module"
 SRC_URI="https://github.com/RomikB/gentoo-repository-deps/raw/main/${P}.tar.xz"
 
