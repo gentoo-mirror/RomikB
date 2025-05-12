@@ -1,0 +1,9 @@
+DEFINED_PHASES=install
+DESCRIPTION=Gentoo Kernel sources for AmneziaWG Linux kernel module
+EAPI=8
+HOMEPAGE=https://github.com/amnezia-vpn/amneziawg-linux-kernel-module
+KEYWORDS=amd64
+LICENSE=GPL-2
+SLOT=0
+SRC_URI=https://github.com/RomikB/gentoo-repository-deps/raw/main/amneziawg-sources-20250512.tar.xz
+_md5_=81ce8bf6efb284e8321f1b48b39682a7
