@@ -39,6 +39,7 @@ src_compile() {
         else
                 ln -s "${KV_DIR}" "${kernel_dir}"
         fi
+	local modargs=(KERNELRELEASE="${KV_FULL}")
         local modlist=(amneziawg=kernel/drivers/net:src:src:all)
         linux-mod-r1_src_compile
 }
