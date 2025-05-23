@@ -1,0 +1,11 @@
+--- a/src/Makefile	2025-05-09 16:01:55.193378606 +0200
++++ b/src/Makefile	2025-05-23 11:40:46.496023875 +0200
+@@ -59,7 +59,7 @@
+ 
+ apply-patches: $(NEEDED_SOURCES) $(GENERATED_SOURCES_DIR)/.patches.stamp
+ 
+-$(GENERATED_SOURCES_DIR)/.patches.stamp: $(sort $(wildcard $(PWD)/patches/*.patch))
++$(GENERATED_SOURCES_DIR)/.patches.stamp: $(sort $(wildcard $(PWD)/patches/*.patch)) | $(NEEDED_SOURCES)
+ 	CWD=$$(pwd); \
+ 	cd $(GENERATED_SOURCES_DIR); \
+ 	for patch in $^; do \
