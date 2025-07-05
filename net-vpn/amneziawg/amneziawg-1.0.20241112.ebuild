@@ -25,21 +25,27 @@ src_unpack() {
 src_compile() {
 	local src_kernel
 	if use dist-kernel; then
-		local src_root=/usr/src/amneziawg-sources
-		local src_full="${src_root}"/"${KV_FULL}" src_partial="${src_root}"/"${KV_MAJOR}.${KV_MINOR}${KV_LOCAL}"
-		if [[ -d "${src_full}" ]]; then
-			src_kernel="${src_full}"
-		elif [[ -d "${src_partial}" ]]; then
-			src_kernel="${src_partial}"
-		fi
+		einfo "Building for kernel ${KV_FULL}"
+		local src_root=/usr/src/amneziawg-sources kv_patch="$KV_PATCH"
+		while [ "${kv_patch}" -ge 1 ]; do
+			local kv_full="${KV_MAJOR}.${KV_MINOR}.${kv_patch}${KV_LOCAL}"
+			local src_full="${src_root}/${kv_full}"
+			if [[ -d "${src_full}" ]]; then
+				src_kernel="${src_full}"
+				break
+			fi
+			kv_patch=$((kv_patch - 1))
+		done
 	fi
 	local kernel_dir=src/kernel
 	if [[ -n "${src_kernel}" ]]; then
+		einfo "Using AmneziaWG kernel sources from ${src_kernel}"
 		local wg_dir="${kernel_dir}"/drivers/net wg_name=wireguard
 		mkdir -p "${wg_dir}"
 		ln -s "${src_kernel}" "${wg_dir}"/"${wg_name}"
 		ln -s "${KV_DIR}"/include "${kernel_dir}"/
 	else
+		einfo "Using kernel sources from ${KV_DIR}"
 		ln -s "${KV_DIR}" "${kernel_dir}"
 	fi
 	local modargs=(KERNELRELEASE="${KV_FULL}")
