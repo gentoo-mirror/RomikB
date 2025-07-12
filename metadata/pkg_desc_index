@@ -1,4 +1,4 @@
 net-vpn/amneziawg 1.0.20241112: AmneziaWG Linux kernel module
-net-vpn/amneziawg-go 0.2.12: AmneziaWG VPN protocol
+net-vpn/amneziawg-go 0.2.12 0.2.13: AmneziaWG VPN protocol
 net-vpn/amneziawg-tools 1.0.20241018 1.0.20250706: Tools for configuring Amnezia-WG
 sys-kernel/amneziawg-sources 20250705: Gentoo Kernel sources for AmneziaWG Linux kernel module
