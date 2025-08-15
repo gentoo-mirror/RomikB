@@ -27,7 +27,7 @@ src_compile() {
 	if use dist-kernel; then
 		einfo "Building for kernel ${KV_FULL}"
 		local src_root=/usr/src/amneziawg-sources kv_patch="$KV_PATCH"
-		while [ "${kv_patch}" -ge 1 ]; do
+		while [ "${kv_patch}" -ge 0 ]; do
 			local kv_full="${KV_MAJOR}.${KV_MINOR}.${kv_patch}${KV_LOCAL}"
 			local src_full="${src_root}/${kv_full}"
 			if [[ -d "${src_full}" ]]; then
